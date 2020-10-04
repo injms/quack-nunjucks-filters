@@ -1,0 +1,28 @@
+name: Run all tests
+
+on:
+ - push
+
+jobs:
+  run-filter-unit-tests:
+    name: Run filter unit tests
+    runs-on: ${{ matrix.platform }}
+
+    strategy:
+      matrix:
+        platform:
+         - ubuntu-latest
+        node-version:
+         - 12.x
+         - 14.x
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install all the things
+      run: npm ci # clean install
+    - name: Test all the things
+      run: npm test
