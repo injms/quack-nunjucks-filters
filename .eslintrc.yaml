@@ -1,0 +1,17 @@
+extends: standard
+ignorePatterns: # The node_modules folder is automatically ignored.
+ - "!.eleventy.js" # Make sure config file is *not* ignored.
+ - "*.vendor.js" # Ignore JavaScript that isn't mine.
+ - "site/**/*.js"
+rules:
+  comma-dangle:
+   - error
+   - always-multiline
+  indent:
+   - error
+   - 2
+overrides:
+- files:
+   - "*.spec.js"
+  rules:
+    no-unused-expressions: "off" # To allow Chai's `expect().to.be.true`

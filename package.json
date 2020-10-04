@@ -1,0 +1,37 @@
+{
+  "name": "quack-nunjucks-filters",
+  "version": "0.8.5",
+  "description": "A collections of filters to use with Nunjucks templates.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npm run lint:javascript && npm run lint:tests",
+    "lint:javascript": "eslint --config='.eslintrc.yaml' 'filters/**/*.js'",
+    "lint:tests": "eslint --config='.eslintrc.yaml' '__spec__/**/*.js'",
+    "test": "mocha '__spec__/**/*.spec.js'"
+  },
+  "directories": {
+    "test": "__spec__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/injms/quack-nunjucks-filters.git"
+  },
+  "keywords": [
+    "nunjucks",
+    "filters"
+  ],
+  "author": "Ian James, https://inj.ms",
+  "license": "SEE LICENSE IN license.md",
+  "bugs": {
+    "url": "https://github.com/injms/quack-nunjucks-filters/issues"
+  },
+  "homepage": "https://github.com/injms/quack-nunjucks-filters#readme",
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}
