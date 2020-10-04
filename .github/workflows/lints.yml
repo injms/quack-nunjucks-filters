@@ -13,7 +13,6 @@ jobs:
         platform:
          - ubuntu-latest
         node-version:
-         - 12.x
          - 14.x
 
     steps:
