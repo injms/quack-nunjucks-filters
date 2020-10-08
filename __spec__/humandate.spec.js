@@ -3,7 +3,7 @@ const { expect, assert } = require('chai')
 
 const humandate = require('../filters/humandate')
 
-describe('humandate filter', function () {
+describe('the `humandate` function', function () {
   it('should return a en-GB human readable date when date-only is supplied in en-US', function () {
     const test = humandate('June 23, 2020')
 

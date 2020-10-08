@@ -3,7 +3,7 @@ const { expect } = require('chai')
 
 const cssmin = require('../filters/cssmin')
 
-describe('cssmin filter', function () {
+describe('the `cssmin` function', function () {
   it('should return minifed CSS', function () {
     const css = `
       html {
