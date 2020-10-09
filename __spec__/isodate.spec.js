@@ -12,7 +12,7 @@ describe('the `isodate` function', function () {
   })
 
   it('should throw an error if no parameters given', function () {
-    assert.throw(
+    assert.throws(
       function () {
         isodate()
       },
@@ -24,7 +24,7 @@ describe('the `isodate` function', function () {
   it('should throw an error if date is undefined', function () {
     let testDateString // undefined
 
-    assert.throw(
+    assert.throws(
       function () {
         isodate(testDateString)
       },

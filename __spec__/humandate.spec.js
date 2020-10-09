@@ -40,7 +40,7 @@ describe('the `humandate` function', function () {
   })
 
   it('should throw an error if incorrect parameters given', function () {
-    assert.throw(
+    assert.throws(
       function () {
         humandate('Jam sandwich')
       },
@@ -50,7 +50,7 @@ describe('the `humandate` function', function () {
   })
 
   it('should throw an error if no parameters given', function () {
-    assert.throw(
+    assert.throws(
       function () {
         humandate()
       },
@@ -62,7 +62,7 @@ describe('the `humandate` function', function () {
   it('should throw an error if no date string is given', function () {
     let testDateString // undefined
 
-    assert.throw(
+    assert.throws(
       function () {
         humandate(testDateString)
       },
