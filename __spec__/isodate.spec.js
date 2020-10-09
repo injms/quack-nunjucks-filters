@@ -13,7 +13,9 @@ describe('the `isodate` function', function () {
 
   it('should throw an error if no parameters given', function () {
     assert.throw(
-      function () { isodate() },
+      function () {
+        isodate()
+      },
       Error,
       'No date parameter.',
     )
