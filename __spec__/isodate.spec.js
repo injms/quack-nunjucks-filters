@@ -8,7 +8,7 @@ describe('the `isodate` function', function () {
     const test = isodate('2020-06-23T20:07:58.800Z')
     const expected = '2020-06-23T20:07:58.800Z'
 
-    expect(test).to.be.equal(expected)
+    expect(test).to.equal(expected)
   })
 
   it('should throw an error if no parameters given', function () {

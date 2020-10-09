@@ -76,6 +76,6 @@ describe('the `cssmin` filter', function () {
       </html>
       `
 
-    expect(test).to.be.equal(expected)
+    expect(test).to.equal(expected)
   })
 })
