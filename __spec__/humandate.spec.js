@@ -44,7 +44,7 @@ describe('the `humandate` function', function () {
 
   it('should throw an error if incorrect parameters given', function () {
     assert.throw(
-      function () { console.log(humandate('Jam sandwich')) },
+      function () { humandate('Jam sandwich') },
       Error,
       'Date could not be parsed.',
     )
