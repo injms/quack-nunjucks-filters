@@ -4,6 +4,19 @@ const { expect, assert } = require('chai')
 const isodate = require('../filters/isodate')
 
 describe('the `isodate` function', function () {
+  const originalTimeZone = process.env.TZ
+
+  before(function () {
+    // Setting the time zone as otherwise it'll be parsed in the time zone
+    // wherever this is run.
+    process.env.TZ = 'Europe/London'
+  })
+
+  after(function () {
+    // Restoring the original time zone.
+    process.env.TZ = originalTimeZone
+  })
+
   it('should return the date in ISO 8061 format if given ISO8061 format', function () {
     const test = isodate('2020-06-23T20:07:58.800Z')
     const expected = '2020-06-23T20:07:58.800Z'
@@ -34,7 +47,14 @@ describe('the `isodate` function', function () {
 
   it('should return the date in ISO 8061 format if given in en-GB format (daylight savings)', function () {
     const test = isodate('23 June 2020')
-    const expected = '2020-06-22T23:00:00.000Z' // Because of daylight savings
+    const expected = '2020-06-22T23:00:00.000Z'
+
+    expect(test).to.equal(expected)
+  })
+
+  it('should return the date in ISO 8061 format if given in en-GB format with a timezone', function () {
+    const test = isodate('23 June 2020 UTC-12')
+    const expected = '2020-06-23T12:00:00.000Z'
 
     expect(test).to.equal(expected)
   })
