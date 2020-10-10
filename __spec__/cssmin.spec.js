@@ -36,46 +36,48 @@ const stubs = {
   expected: 'html{background:#f0f}.thing{display:block;background:#fc0}.identical-thing,.other-thing{display:block;background:#fff}/*! Only important comments */',
 }
 
-describe('the `cssmin` function', function () {
-  it('should return minifed CSS', function () {
-    expect(cssmin(stubs.css)).to.equal(stubs.expected)
+describe('the `cssmin`', function () {
+  describe('function', function () {
+    it('should return minifed CSS', function () {
+      expect(cssmin(stubs.css)).to.equal(stubs.expected)
+    })
   })
-})
 
-describe('the `cssmin` filter', function () {
-  it('should correctly minify inline CSS in a template', function () {
-    const env = new nunjucks.Environment()
-    env.addFilter('cssmin', (css) => cssmin(css))
+  describe('filter', function () {
+    it('should correctly minify inline CSS in a template', function () {
+      const env = new nunjucks.Environment()
+      env.addFilter('cssmin', (css) => cssmin(css))
 
-    const test = env.renderString(`
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          {%- set inline_css %}
-            ${stubs.css}
-          {% endset %}
-          <style>
-            {{ inline_css | cssmin | safe }}
-          </style>
-        </head>
-        <body></body>
-      </html>
-      `)
+      const test = env.renderString(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            {%- set inline_css %}
+              ${stubs.css}
+            {% endset %}
+            <style>
+              {{ inline_css | cssmin | safe }}
+            </style>
+          </head>
+          <body></body>
+        </html>
+        `)
 
-    const expected = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <style>
-            ${stubs.expected}
-          </style>
-        </head>
-        <body></body>
-      </html>
-      `
+      const expected = `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <style>
+              ${stubs.expected}
+            </style>
+          </head>
+          <body></body>
+        </html>
+        `
 
-    expect(test).to.equal(expected)
+      expect(test).to.equal(expected)
+    })
   })
 })

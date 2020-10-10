@@ -49,8 +49,10 @@ Links can be around images [![alt-text](media/markdown.png)](https://example.com
 `,
 }
 
-describe('the `markdownify` function', function () {
-  it('should return the correct HTML from Markdown', function () {
-    expect(markdownify.render(stub.markdown)).to.equal(stub.expected)
+describe('the `markdownify`', function () {
+  describe('function', function () {
+    it('should return the correct HTML from Markdown', function () {
+      expect(markdownify.render(stub.markdown)).to.equal(stub.expected)
+    })
   })
 })
