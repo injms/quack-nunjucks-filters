@@ -12,6 +12,12 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 14.x
+    - name: Cache node_modules
+      id: cache-modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: 14.x-${{ runner.OS }}-${{ hashFiles('package.json') }}
     - name: Install all the things
       run: npm ci # clean install
     - name: Lint all the JavaScripts
