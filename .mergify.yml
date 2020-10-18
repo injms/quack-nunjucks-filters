@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: Dependency bumps merged automatically
+    conditions:
+      - author~=^dependabot(|-preview)\[bot\]$
+      - status-success=Run linting
+      - status-success=Run filter function unit tests
+    actions:
+      merge:
+        method: merge
+        strict: smart
