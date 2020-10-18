@@ -6,6 +6,19 @@ const nunjucks = require('nunjucks')
 const humandate = require('../filters/humandate')
 
 describe('the `humandate`', function () {
+  const originalTimeZone = process.env.TZ
+
+  before(function () {
+    // Setting the time zone as otherwise it'll be parsed in the time zone
+    // wherever this is run.
+    process.env.TZ = 'Europe/London'
+  })
+
+  after(function () {
+    // Restoring the original time zone.
+    process.env.TZ = originalTimeZone
+  })
+
   describe('function', function () {
     describe('returns en-GB human readable date for a', function () {
       it('Unix timestamp', function () {
