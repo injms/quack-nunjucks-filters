@@ -4,7 +4,7 @@
  * @return {String} Date written in locale given
  */
 
-const humanDate = (date, { locale } = { locale: 'en-GB' }) => {
+const humanDate = (date, locale = 'en-GB') => {
   if (typeof date === 'undefined') {
     throw new Error('No date parameter.')
   }

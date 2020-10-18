@@ -80,21 +80,21 @@ describe('the `humandate`', function () {
 
     describe('returns appropriate date when the locale is set to', function () {
       it('nothing', function () {
-        const test = humandate('23 June 2020 GMT+1', { locale: undefined })
+        const test = humandate('23 June 2020 GMT+1', undefined)
         const expected = '23 June 2020'
 
         expect(test).to.equal(expected)
       })
 
       it('a language', function () {
-        const test = humandate('23 June 2020 GMT+1', { locale: 'pt' })
+        const test = humandate('23 June 2020 GMT+1', 'pt')
         const expected = '23 de junho de 2020'
 
         expect(test).to.equal(expected)
       })
 
       it('a language and a location', function () {
-        const test = humandate('23 June 2020 GMT+1', { locale: 'es-HN' })
+        const test = humandate('23 June 2020 GMT+1', 'es-HN')
         const expected = '23 de junio de 2020'
 
         expect(test).to.equal(expected)
@@ -140,7 +140,7 @@ describe('the `humandate`', function () {
 
     before(function () {
       env = new nunjucks.Environment()
-      env.addFilter('humandate', (datestring, locale) => humandate(datestring, { locale }))
+      env.addFilter('humandate', (datestring, locale) => humandate(datestring, locale))
     })
 
     describe('returns en-GB human readable date for a', function () {
