@@ -1,6 +1,8 @@
 /* eslint-env mocha */
 const { expect } = require('chai')
 
+const nunjucks = require('nunjucks')
+
 const markdownify = require('../filters/markdownify')
 
 // Yes, this looks like garbage - but whitespacing and newlines affect the
@@ -53,6 +55,43 @@ describe('the `markdownify`', function () {
   describe('function', function () {
     it('should return the correct HTML from Markdown', function () {
       expect(markdownify.render(stub.markdown)).to.equal(stub.expected)
+    })
+  })
+
+  describe('filter', function () {
+    let env
+
+    before(function () {
+      env = new nunjucks.Environment()
+      env.addFilter('markdownify', (markdown) => markdownify.render(markdown))
+    })
+
+    it('should return the correct HTML from Markdown', function () {
+      const test = env.renderString(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+        </head>
+        <body>
+          {{ markdown | markdownify | safe }}
+        </body>
+      </html>
+      `, { markdown: stub.markdown })
+
+      const expected = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+        </head>
+        <body>
+          ${stub.expected}
+        </body>
+      </html>
+      `
+
+      expect(test).to.equal(expected)
     })
   })
 })
