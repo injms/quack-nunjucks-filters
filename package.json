@@ -43,7 +43,7 @@
     "eslint-plugin-standard": "^4.0.2",
     "mocha": "^8.2.0",
     "nunjucks": "^3.2.2",
-    "sinon": "^9.2.0"
+    "sinon": "^9.2.1"
   },
   "dependencies": {
     "clean-css": "^4.2.3",
