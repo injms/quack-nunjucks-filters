@@ -2,16 +2,25 @@
   "name": "quack-nunjucks-filters",
   "version": "0.8.5",
   "description": "A collections of filters to use with Nunjucks templates.",
-  "main": "index.js",
   "scripts": {
     "lint": "npm run lint:javascript && npm run lint:tests",
     "lint:javascript": "eslint --config='.eslintrc.yaml' 'filters/**/*.js'",
     "lint:tests": "eslint --config='.eslintrc.yaml' '__spec__/**/*.js'",
-    "test": "mocha '__spec__/**/*.spec.js'"
+    "test": "mocha '__spec__/**/*.spec.js'",
+    "create-types": "tsc --declaration --allowJs --emitDeclarationOnly index.js"
   },
   "directories": {
     "test": "__spec__"
   },
+  "main": "index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "./index.js",
+    "./index.d.ts",
+    "./filters/",
+    "./license.md",
+    "./readme.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/injms/quack-nunjucks-filters.git"

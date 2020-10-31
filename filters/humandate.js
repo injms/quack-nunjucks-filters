@@ -1,7 +1,7 @@
 /**
- * @param  {String} date Date or datetime string that can be used by `Date.parse()`
- * @param  {String} [locale] Valid BCP47 string. Defaults to en-GB.
- * @return {String} Date written in locale given
+ * @param  {string} date Date or datetime string that can be used by `Date.parse()`
+ * @param  {string} [locale] Valid BCP47 string. Defaults to en-GB.
+ * @return {string} Date written in locale given
  */
 const humanDate = (date, locale = 'en-GB') => {
   if (typeof date === 'undefined') {
