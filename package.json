@@ -2,37 +2,52 @@
   "name": "quack-nunjucks-filters",
   "version": "0.8.5",
   "description": "A collections of filters to use with Nunjucks templates.",
-  "main": "index.js",
-  "scripts": {
-    "lint": "npm run lint:javascript && npm run lint:tests",
-    "lint:javascript": "eslint --config='.eslintrc.yaml' 'filters/**/*.js'",
-    "lint:tests": "eslint --config='.eslintrc.yaml' '__spec__/**/*.js'",
-    "test": "mocha '__spec__/**/*.spec.js'"
+  "license": "SEE LICENSE IN license.md",
+  "author": {
+    "name": "Ian James",
+    "url": "https://inj.ms"
   },
-  "directories": {
-    "test": "__spec__"
+  "keywords": [
+    "nunjucks",
+    "filters",
+    "eleventy",
+    "11ty"
+  ],
+  "homepage": "https://github.com/injms/quack-nunjucks-filters#readme",
+  "bugs": {
+    "url": "https://github.com/injms/quack-nunjucks-filters/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/injms/quack-nunjucks-filters.git"
   },
-  "keywords": [
-    "nunjucks",
-    "filters"
-  ],
-  "author": {
-    "name": "Ian James",
-    "url": "https://inj.ms"
+  "scripts": {
+    "lint": "npm run lint:javascript && npm run lint:tests",
+    "lint:javascript": "eslint --config='.eslintrc.yaml' 'filters/**/*.js'",
+    "lint:tests": "eslint --config='.eslintrc.yaml' '__spec__/**/*.js'",
+    "test": "mocha '__spec__/**/*.spec.js'",
+    "create-types": "tsc --declaration --allowJs --emitDeclarationOnly index.js"
   },
-  "license": "SEE LICENSE IN license.md",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "filters/",
+    "license.md",
+    "readme.md"
+  ],
+  "directories": {
+    "test": "__spec__"
+  },
   "engines": {
     "node": ">= 14.13.0",
     "npm": ">= 6.14.8"
   },
-  "bugs": {
-    "url": "https://github.com/injms/quack-nunjucks-filters/issues"
+  "dependencies": {
+    "clean-css": "^4.2.3",
+    "markdown-it": "^12.0.2"
   },
-  "homepage": "https://github.com/injms/quack-nunjucks-filters#readme",
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^7.12.1",
@@ -44,9 +59,5 @@
     "mocha": "^8.2.0",
     "nunjucks": "^3.2.2",
     "sinon": "^9.2.1"
-  },
-  "dependencies": {
-    "clean-css": "^4.2.3",
-    "markdown-it": "^12.0.2"
   }
 }

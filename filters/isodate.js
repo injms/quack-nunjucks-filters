@@ -1,6 +1,6 @@
 /**
- * @param  {String} date string that can be parsed by Date.parse()
- * @return {String} Date written in as ISO8061 string.
+ * @param  {string} date string that can be parsed by Date.parse()
+ * @return {string} Date written in as ISO8061 string.
  */
 const isoDate = (date) => {
   if (typeof date === 'undefined') {
