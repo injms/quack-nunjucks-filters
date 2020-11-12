@@ -1,6 +1,6 @@
 {
   "name": "@injms/quack-nunjucks-filters",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "A collections of filters to use with Nunjucks templates.",
   "license": "SEE LICENSE IN license.md",
   "author": {
