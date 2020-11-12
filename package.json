@@ -1,6 +1,6 @@
 {
   "name": "quack-nunjucks-filters",
-  "version": "0.8.5",
+  "version": "0.9.0",
   "description": "A collections of filters to use with Nunjucks templates.",
   "license": "SEE LICENSE IN license.md",
   "author": {
