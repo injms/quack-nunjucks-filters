@@ -1,6 +1,6 @@
 # 🦆 Quack Nunjucks filters
 
-A collection of small, simple, opinionated Nunjucks filters.
+A collection of small, simple, opinionated filters that can be used with Nunjucks and Eleventy.
 
 ## What do these filters do?
 
@@ -142,15 +142,15 @@ Now these can be used in the template:
 
 ## 🧪 Testing
 
-Tests use [Mocha](https://mochajs.org/), [Chai](http://chaijs.com), and [Sinon](https://sinonjs.org/).
+Clone the repo; run `npm install`; and then run `npm test` will run all the tests.
 
-Clone the repo, run `npm install`, and then run `npm test` will run all the tests.
+Tests use [Mocha](https://mochajs.org/), [Chai](http://chaijs.com), and [Sinon](https://sinonjs.org/).
 
 ## 👔 Linting
 
-This is linted using a slightly extended version of [standard](https://standardjs.com/). The only adjustment is that trailing commas - `comma-dangle` - are turned allowed to give a better diff.
-
 `npm run lint` will lint all the JavaScript files.
+
+This is linted using a slightly extended version of [standard](https://standardjs.com/). The only adjustment is that trailing commas - `comma-dangle` - are allowed to give a better diff.
 
 ## 🐞 Bugs and issues
 
