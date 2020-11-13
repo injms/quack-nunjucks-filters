@@ -12,7 +12,7 @@ jobs:
     runs-on: "ubuntu-latest"
     if: "(github.event.pull_request.merged == true) && (github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]')"
     steps:
-      - uses: "actions/checkout@v2"
+      - uses: "actions/checkout@v2.3.4"
       - uses: "actions/setup-node@v1"
         with:
           node-version: "14.x"
@@ -24,7 +24,7 @@ jobs:
     needs: "lint-and-test"
     if: "(github.event.pull_request.merged == true) && (github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]')"
     steps:
-      - uses: "actions/checkout@v2"
+      - uses: "actions/checkout@v2.3.4"
       - uses: "actions/setup-node@v1"
         with:
           node-version: "14.x"
