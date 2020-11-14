@@ -3,7 +3,7 @@ const { expect } = require('chai')
 
 const nunjucks = require('nunjucks')
 
-const cssmin = require('../filters/cssmin')
+const { cssmin } = require('../index')
 
 const stubs = {
   css: `
