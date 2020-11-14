@@ -73,7 +73,7 @@ const nunjucks = require('nunjucks')
 
 const {
   cssmin,
-  debug
+  debug,
   humandate,
   isodate,
   markdownify,
@@ -83,9 +83,9 @@ const env = new nunjucks.Environment()
 
 env.addFilter('cssmin', (css) => cssmin(css))
 env.addFilter('debug', (thing) => debug(thing))
-env.addFilter('humandate', (datestring, locale) => isodate(datestring, locale))
+env.addFilter('humandate', (datestring, locale) => humandate(datestring, locale))
 env.addFilter('isodate', (datestring) => isodate(datestring))
-env.addFilter('markdownify', (markdown) => md.render(markdown)) // Note the use of render()
+env.addFilter('markdownify', (markdown) => markdownify.render(markdown)) // Note the use of `render()`
 ```
 
 And now you can use these filters wherever you use `env` to render markup; for example:
@@ -109,7 +109,7 @@ Import the filters into the `.eleventy.js` file:
 
 const {
   cssmin,
-  debug
+  debug,
   humandate,
   isodate,
   markdownify,
@@ -118,9 +118,9 @@ const {
 module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter('cssmin', (css) => cssmin(css))
   eleventyConfig.addFilter('debug', (thing) => debug(thing))
-  eleventyConfig.addFilter('humandate', (datestring, locale) => isodate(datestring, locale))
+  eleventyConfig.addFilter('humandate', (datestring, locale) => humandate(datestring, locale))
   eleventyConfig.addFilter('isodate', (datestring) => isodate(datestring))
-  eleventyConfig.addFilter('markdownify', (markdown) => md.render(markdown))
+  eleventyConfig.addFilter('markdownify', (markdown) => markdownify.render(markdown)) // Note the use of `render()`
 
   // rest of Eleventy's config and setup
 }
