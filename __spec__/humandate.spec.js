@@ -3,7 +3,7 @@ const { expect, assert } = require('chai')
 
 const nunjucks = require('nunjucks')
 
-const humandate = require('../filters/humandate')
+const { humandate } = require('../index')
 
 describe('the `humandate`', function () {
   const originalTimeZone = process.env.TZ

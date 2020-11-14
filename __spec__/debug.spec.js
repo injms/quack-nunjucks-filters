@@ -4,7 +4,7 @@ const sinon = require('sinon')
 
 const nunjucks = require('nunjucks')
 
-const debug = require('../filters/debug')
+const { debug } = require('../index')
 
 describe('the `debug`', function () {
   before(function () {

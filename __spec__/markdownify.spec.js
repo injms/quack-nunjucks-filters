@@ -3,7 +3,7 @@ const { expect } = require('chai')
 
 const nunjucks = require('nunjucks')
 
-const markdownify = require('../filters/markdownify')
+const { markdownify } = require('../index')
 
 // Yes, this looks like garbage - but whitespacing and newlines affect the
 // output - so this needs to have no spacing on the left.
