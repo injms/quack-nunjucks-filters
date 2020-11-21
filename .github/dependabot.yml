@@ -5,10 +5,8 @@ updates:
   schedule:
     interval: "daily"
     time: "12:00"
-  pull-request-branch-name:
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
     interval: "daily"
     time: "12:00"
-  pull-request-branch-name:
