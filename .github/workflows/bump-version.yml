@@ -1,4 +1,4 @@
-name: "Bump release version on dependency update"
+name: "Bump version on dependency update"
 
 on:
   pull_request:
@@ -16,9 +16,11 @@ jobs:
         with:
           node-version: "14.x"
       - run: echo ${{ github.actor }}
+      - run: echo ${{ github.base_ref }}
+      - run: echo ${{ github.ref }}
   lint-and-test:
     runs-on: "ubuntu-latest"
-    if: "(github.event.pull_request.merged == true) && (github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]')"
+    if: "github.event.pull_request.merged == true && github.repository_owner == 'injms' && startsWith('dependabot/', github.ref) && (github.actor == 'injms' || github.actor = 'mergify[bot]')"
     steps:
       - uses: "actions/checkout@v2.3.4"
       - uses: "actions/setup-node@v2.1.2"
@@ -30,13 +32,11 @@ jobs:
   bump-version:
     runs-on: "ubuntu-latest"
     needs: "lint-and-test"
-    if: "(github.event.pull_request.merged == true) && (github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]')"
+    if: "github.event.pull_request.merged == true && github.repository_owner == 'injms' && startsWith('dependabot/', github.ref) && (github.actor == 'injms' || github.actor = 'mergify[bot]')"
     steps:
       - uses: "actions/checkout@v2.3.4"
-      - uses: "actions/setup-node@v2.1.2"
         with:
           node-version: "14.x"
       - run: "git fetch --tags"
-      - run: "npm ci"
       - run: "npm version patch -m \"v%s\""
-      - run: "git push --tags"
+      - run: "git push && git push --tags"
