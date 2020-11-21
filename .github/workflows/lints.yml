@@ -17,10 +17,7 @@ jobs:
       uses: actions/cache@v2.1.3
       with:
         path: node_modules
-        key: 14.x-${{ runner.OS }}-${{ hashFiles('package.json') }}
-    - name: Install all the things
-      run: npm ci # clean install
-    - name: Lint all the JavaScripts
-      run: npm run lint:javascript
-    - name: Lint all the tests
-      run: npm run lint:tests
+        key: 14.x-${{ runner.OS }}-${{ hashFiles('package-lock.json') }}
+    - run: npm ci
+    - run: npm run lint:javascript
+    - run: npm run lint:tests
