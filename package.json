@@ -1,6 +1,6 @@
 {
   "name": "@injms/quack-nunjucks-filters",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "A collections of filters to use with Nunjucks and Eleventy.",
   "license": "SEE LICENSE IN license.md",
   "author": {
