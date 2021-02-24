@@ -54,6 +54,30 @@ The markdownify filter requires use of [Nunjuck's `safe` filter](https://mozilla
 
 Credit where credit is due, this idea was completely pinched from [Hugo's markdownify function](https://gohugo.io/functions/markdownify/).
 
+### `addattribute`
+
+Takes a string or a `markSafe` object, and adds an attribute or property to it.
+
+```javascript
+{{ 'This is some text' | addattribute('lang', 'en') }} // <span lang="en">This is some text</span>
+```
+
+Could also be set up to add a specific attribute - for example, `rel`:
+
+```javascript
+env.addFilter('addrel', (element, content) => addattribute({
+  element,
+  attribute: 'rel',
+  content,
+}))
+```
+
+could then be used
+
+```javascript
+{{ '<a href="https://example.com/next-article/">Next article</a>' | addrel('next') }} // <a href="https://example.com/next-article/" rel="next">Next article</a>
+```
+
 ## Set up
 
 Requires Node 14.x and npm 6.x.
