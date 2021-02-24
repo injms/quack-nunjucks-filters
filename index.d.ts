@@ -1,5 +1,7 @@
-export const cssmin: typeof import("./filters/cssmin");
-export const debug: typeof import("./filters/debug");
-export const humandate: typeof import("./filters/humandate");
-export const isodate: typeof import("./filters/isodate");
-export const markdownify: any;
+import addattribute = require("./filters/addattribute");
+import cssmin = require("./filters/cssmin");
+import debug = require("./filters/debug");
+import humandate = require("./filters/humandate");
+import isodate = require("./filters/isodate");
+import markdownify = require("./filters/markdownify");
+export { addattribute, cssmin, debug, humandate, isodate, markdownify };
