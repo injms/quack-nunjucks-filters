@@ -9,7 +9,7 @@ jobs:
   debug:
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v2"
+      - uses: "actions/checkout@v2.3.4"
       - run: echo ${{ github.actor }}
       - run: echo ${{ github.base_ref }}
       - run: echo ${{ github.ref }}
