@@ -45,7 +45,7 @@
     "npm": ">= 6.14.8"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.5",
+    "cheerio": "^1.0.0-rc.9",
     "clean-css": "^5.0.1",
     "markdown-it": "^12.0.2",
     "nunjucks": "^3.2.3"
