@@ -1,4 +1,4 @@
-const { load, html } = require('cheerio')
+const { load } = require('cheerio')
 const { runtime: { markSafe } } = require('nunjucks')
 
 /**
@@ -32,7 +32,7 @@ const addattribute = ({
       return [val, content].filter(x => !!x).join(' ')
     })
 
-  return markSafe(html(elementWithAttribute))
+  return markSafe($.html(elementWithAttribute))
 }
 
 module.exports = addattribute
